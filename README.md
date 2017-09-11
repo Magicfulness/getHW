@@ -6,10 +6,11 @@ Only works for course websites that list all their homework in the same page. Mo
 Inspired by Josh Schreuder's BASH script to download NASA's picture of the day. Link: https://gist.github.com/JoshSchreuder/882666
 
 # TODO
+Automatically download solution files in addition to other files.
+
 Add date checking to only check for new homeworks during days after they are released
 
 Only check once for every homework, no matter how many times there is a link
 
 Only check for the latest homework, rather than go through every homework
 
-Make the script do nothing or give an error message if there is a 404 error when downloading a file instead of making a bad file.
