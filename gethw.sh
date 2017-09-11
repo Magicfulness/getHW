@@ -19,12 +19,14 @@ if [ $HOME == "CHANGEME" ]; then
 	echo "Please change default options."
 	exit
 fi
+mkdir -p $SAVE_DIR
 
 # Download course page to find links to files
 wget $HOME -O /tmp/coursesite.html
+
+# Unneccessarily complicated regexing through the course page to find links to hw
 HW_REG="<a[[:blank:]]href=\"\($HOME\)\?\/\?\([[:alnum:]]\+\/\)\+$FILE_PAT\">"
 URL_REG="\/.*$FILE_TYPE"
-grep -n $HW_REG /tmp/coursesite.html
 SITE=$(grep -o $HW_REG /tmp/coursesite.html | grep -o $URL_REG)
 
 for URL in $SITE; do
